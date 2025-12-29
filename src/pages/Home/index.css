@@ -2,7 +2,7 @@
     background-color: #1a2438;
     width: 80vw;
     height: calc(100vh - 130px);
-    color: var(--text-white);
+    color: var(--bg-white);
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 10px;

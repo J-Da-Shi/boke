@@ -1,10 +1,13 @@
 import './index.css'
 import logoImg from '../../assets/react.svg'
 import { useNavigate } from 'react-router-dom'
+import { Button } from 'antd'
+import { useTheme } from '../../hook/useTheme'
 
 const Header = () => {
 
     const navigate = useNavigate()
+    const { toggleTheme } = useTheme()
     return (
         <div className="header-container">
             <div className='header-left'>
@@ -25,6 +28,9 @@ const Header = () => {
                 <span>
                     搜索
                 </span>
+                <Button type="link" onClick={() => toggleTheme()}>
+                    主题切换
+                </Button>
             </div>
         </div>
     )

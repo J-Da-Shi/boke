@@ -1,0 +1,15 @@
+.works-container {
+    color: var(--text-color-black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    .works-input-content {
+        margin-top: 20px;
+
+        .works-content-input {
+            margin-bottom: 20px;
+        }
+    }
+}
