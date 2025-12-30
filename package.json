@@ -37,7 +37,8 @@
     "vite": "^7.2.4"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run lint"
+    "pre-commit": "pnpm run lint",
+    "commit-msg": "pnpm run lint"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
