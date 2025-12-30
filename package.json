@@ -39,10 +39,5 @@
   "simple-git-hooks": {
     "pre-commit": "pnpm run lint",
     "commit-msg": "pnpm run lint"
-  },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "git add"
-    ]
   }
 }
