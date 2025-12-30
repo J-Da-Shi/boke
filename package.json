@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --cache --format=codeframe",
     "preview": "vite preview",
     "lint:staged": "lint-staged"
   },
@@ -27,6 +27,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
     "eslint": "^9.39.1",
+    "eslint-formatter-codeframe": "^7.32.2",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
@@ -38,12 +39,12 @@
     "vite": "^7.2.4"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm run lint:staged",
-    "commit-msg": "pnpm run lint"
+    "pre-commit": "pnpm run lint:staged"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
+      "eslint --fix",
+      "git add"
     ]
   }
 }
