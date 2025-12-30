@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useLayoutEffect, useState } from 'react';
 import { type Theme, themes, type ThemeVars } from './themes';
 
 
@@ -10,14 +10,14 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // 获取用户偏好（从localStorage 或 系统）
-// const getPreferredTheme = (): Theme => {
-//     const saved = localStorage.getItem('theme') as Theme | null;
-//     if (saved && ['light', 'dark'].includes(saved)) return saved;
+const getPreferredTheme = (): Theme => {
+    const saved = localStorage.getItem('theme') as Theme | null;
+    if (saved && ['light', 'dark'].includes(saved)) return saved;
 
-//     // 默认跟随系统
-//     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-//     return systemPrefersDark ? 'dark' : 'light';
-// }
+    // 默认跟随系统
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return systemPrefersDark ? 'dark' : 'light';
+}
 
 // 应用 CSS 变量到 ：root
 const applyTheme = (theme: Theme) => {
@@ -29,7 +29,7 @@ const applyTheme = (theme: Theme) => {
 }
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>('light');
+    const [theme, setTheme] = useState<Theme>(getPreferredTheme);
 
     const toggleTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -37,7 +37,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         localStorage.setItem('theme', newTheme);
     }
 
-    useEffect(() => {
+    // 使用 useLayoutEffect 确保在浏览器绘制前应用主题，避免闪烁
+    useLayoutEffect(() => {
         applyTheme(theme);
     }, [theme]);
 
