@@ -1,14 +1,11 @@
 {
-  "name": "my-boke",
+  "name": "boke",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --format=codeframe",
-    "preview": "vite preview",
-    "lint:staged": "lint-staged"
+    "build": "tsc -b && vite build"
   },
   "dependencies": {
     "antd": "^6.1.2",
@@ -18,7 +15,8 @@
     "react-markdown": "^10.1.0",
     "react-router-dom": "^7.11.0",
     "rehype-highlight": "^7.0.2",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "@lib/components": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -38,13 +36,5 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "^7.2.4"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm run lint:staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write"
-    ]
   }
 }

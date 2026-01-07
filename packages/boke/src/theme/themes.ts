@@ -1,5 +1,5 @@
 // 支持的主题类型
-export type Theme = 'light' | 'dark';
+export type Theme = 'light' | 'dark'
 
 // 主题配置对象
 export const themes = {
@@ -12,7 +12,7 @@ export const themes = {
     '--bg-active': 'rgba(24, 144, 255, 0.1)',
     '--bg-color-blue': '#1a2438',
     '--bg-color-blue-100': '#06419a',
-    
+
     // 文本颜色
     '--text-color-black': '#000000',
     '--text-color-primary': '#1890ff',
@@ -20,7 +20,7 @@ export const themes = {
     '--text-color-tertiary': 'rgba(0, 0, 0, 0.45)',
     '--text-color-disabled': 'rgba(0, 0, 0, 0.25)',
     '--text-color-inverse': '#ffffff',
-    
+
     // 主色变体
     '--color-primary': '#1890ff',
     '--color-primary-light': '#40a9ff',
@@ -28,7 +28,7 @@ export const themes = {
     '--color-primary-dark': '#096dd9',
     '--color-primary-hover': '#40a9ff',
     '--color-primary-active': '#096dd9',
-    
+
     // 状态颜色
     '--color-success': '#52c41a',
     '--color-success-light': '#95de64',
@@ -42,30 +42,30 @@ export const themes = {
     '--color-info': '#1890ff',
     '--color-info-light': '#69c0ff',
     '--color-info-bg': '#e6f7ff',
-    
+
     // 边框颜色
     '--border-color': 'rgba(0, 0, 0, 0.15)',
     '--border-color-light': 'rgba(0, 0, 0, 0.08)',
     '--border-color-lighter': 'rgba(0, 0, 0, 0.06)',
     '--border-color-dark': 'rgba(0, 0, 0, 0.25)',
     '--border-color-primary': '#1890ff',
-    
+
     // 分割线
     '--divider-color': 'rgba(0, 0, 0, 0.08)',
     '--divider-color-dark': 'rgba(0, 0, 0, 0.12)',
-    
+
     // 阴影
     '--shadow-sm': '0 2px 8px rgba(0, 0, 0, 0.08)',
     '--shadow-md': '0 4px 16px rgba(0, 0, 0, 0.12)',
     '--shadow-lg': '0 8px 24px rgba(0, 0, 0, 0.16)',
     '--shadow-xl': '0 12px 48px rgba(0, 0, 0, 0.2)',
     '--shadow-primary': '0 4px 16px rgba(24, 144, 255, 0.2)',
-    
+
     // 链接颜色
     '--link-color': '#1890ff',
     '--link-hover-color': '#40a9ff',
     '--link-active-color': '#096dd9',
-    
+
     // 遮罩
     '--mask-color': 'rgba(0, 0, 0, 0.45)',
     '--mask-color-light': 'rgba(0, 0, 0, 0.25)',
@@ -79,7 +79,7 @@ export const themes = {
     '--bg-active': 'rgba(24, 144, 255, 0.2)',
     '--bg-color-blue': '#1a2438',
     '--bg-color-blue-100': '#06419a',
-    
+
     // 文本颜色
     '--text-color-black': '#ffffff',
     '--text-color-primary': '#1890ff',
@@ -87,7 +87,7 @@ export const themes = {
     '--text-color-tertiary': 'rgba(255, 255, 255, 0.45)',
     '--text-color-disabled': 'rgba(255, 255, 255, 0.25)',
     '--text-color-inverse': '#000000',
-    
+
     // 主色变体
     '--color-primary': '#1890ff',
     '--color-primary-light': '#40a9ff',
@@ -95,7 +95,7 @@ export const themes = {
     '--color-primary-dark': '#096dd9',
     '--color-primary-hover': '#40a9ff',
     '--color-primary-active': '#096dd9',
-    
+
     // 状态颜色
     '--color-success': '#52c41a',
     '--color-success-light': '#73d13d',
@@ -109,35 +109,35 @@ export const themes = {
     '--color-info': '#1890ff',
     '--color-info-light': '#69c0ff',
     '--color-info-bg': 'rgba(24, 144, 255, 0.15)',
-    
+
     // 边框颜色
     '--border-color': 'rgba(255, 255, 255, 0.15)',
     '--border-color-light': 'rgba(255, 255, 255, 0.08)',
     '--border-color-lighter': 'rgba(255, 255, 255, 0.06)',
     '--border-color-dark': 'rgba(255, 255, 255, 0.25)',
     '--border-color-primary': '#1890ff',
-    
+
     // 分割线
     '--divider-color': 'rgba(255, 255, 255, 0.08)',
     '--divider-color-dark': 'rgba(255, 255, 255, 0.12)',
-    
+
     // 阴影
     '--shadow-sm': '0 2px 8px rgba(0, 0, 0, 0.3)',
     '--shadow-md': '0 4px 16px rgba(0, 0, 0, 0.4)',
     '--shadow-lg': '0 8px 24px rgba(0, 0, 0, 0.5)',
     '--shadow-xl': '0 12px 48px rgba(0, 0, 0, 0.6)',
     '--shadow-primary': '0 4px 16px rgba(24, 144, 255, 0.3)',
-    
+
     // 链接颜色
     '--link-color': '#1890ff',
     '--link-hover-color': '#40a9ff',
     '--link-active-color': '#096dd9',
-    
+
     // 遮罩
     '--mask-color': 'rgba(0, 0, 0, 0.65)',
     '--mask-color-light': 'rgba(0, 0, 0, 0.45)',
   },
-} as const;
+} as const
 
 // 提取 CSS 变量类型（用于 TS 类型安全）
-export type ThemeVars = typeof themes.light;
+export type ThemeVars = typeof themes.light

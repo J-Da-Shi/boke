@@ -1,11 +1,10 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { ThemeProvider } from './theme/ThemeProvider';
-import Header from './components/Header';
-import Home from './pages/Home';
-import Blog from './pages/Blog';
-import Works from './pages/Works';
-import About from './pages/About';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { ThemeProvider } from './theme/ThemeProvider'
+import Header from './components/Header'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import Works from './pages/Works'
+import About from './pages/About'
 
 const App = () => {
   return (
@@ -23,4 +22,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
