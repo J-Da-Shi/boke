@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "pnpm --filter boke dev",
+    "dev:web": "pnpm --filter boke dev:boke",
+    "dev:electron": "pnpm --filter my-electronApp dev:electronApp",
     "build": "pnpm --filter boke build",
     "build:components": "pnpm --filter @lib/components build",
     "lint-staged": "lint-staged"
@@ -15,6 +16,7 @@
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "@xyflow/react": "^12.10.0",
     "eslint": "^9.39.1",
     "eslint-formatter-codeframe": "^7.32.2",
     "eslint-plugin-react-hooks": "^7.0.1",
