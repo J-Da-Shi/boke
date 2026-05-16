@@ -30,15 +30,17 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - uses: actions/configure-pages@v5
+
       - run: pnpm install --frozen-lockfile
 
       - name: Build web
         run: pnpm build
-        env:
-          VITE_API_BASE_URL: https://你的后端域名/api
 
       - name: SPA fallback
-        run: cp packages/boke/dist/index.html packages/boke/dist/404.html
+        run: |
+          cp packages/boke/dist/index.html packages/boke/dist/404.html
+          touch packages/boke/dist/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:

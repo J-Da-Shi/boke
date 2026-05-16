@@ -6,10 +6,12 @@ import Blog from './pages/Blog'
 import Works from './pages/Works'
 import About from './pages/About'
 
+const routerBasename = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 const App = () => {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename={routerBasename}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
