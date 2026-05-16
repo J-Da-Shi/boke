@@ -1,7 +1,8 @@
 import './index.css'
 import logoImg from '../../assets/react.svg'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import type { FormEvent } from 'react'
 import { useTheme } from '../../hook/useTheme'
 
 interface NavItem {
@@ -10,64 +11,54 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { path: '/', label: '简介' },
-  { path: '/blog', label: '记录' },
+  { path: '/', label: '首页' },
+  { path: '/blog', label: '文章' },
   { path: '/works', label: '作品' },
   { path: '/about', label: '关于' },
 ]
 
 const Header = () => {
   const navigate = useNavigate()
-  const location = useLocation()
   const { theme, toggleTheme } = useTheme()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const handleSearch = (e: React.FormEvent) => {
+  const handleSearch = (e: FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
       navigate(`/blog?search=${encodeURIComponent(searchQuery)}`)
       setSearchQuery('')
       setIsSearchOpen(false)
+      setIsMobileMenuOpen(false)
     }
-  }
-
-  const isActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/'
-    }
-    return location.pathname.startsWith(path)
   }
 
   return (
     <header className="header-container">
       <div className="header-content">
-        {/* Logo */}
-        <div className="header-left" onClick={() => navigate('/')}>
+        <Link className="header-left" to="/" onClick={() => setIsMobileMenuOpen(false)}>
           <img src={logoImg} alt="logo" className="logo" />
-          <span className="logo-text">Div里有光</span>
-        </div>
+          <span className="logo-text">Div 里有光</span>
+        </Link>
 
-        {/* Desktop Navigation */}
         <nav className="header-center">
           {navItems.map((item) => (
-            <span
+            <NavLink
               key={item.path}
-              className={`nav-item ${isActive(item.path) ? 'active' : ''}`}
+              to={item.path}
+              end={item.path === '/'}
+              className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
               onClick={() => {
-                navigate(item.path)
                 setIsMobileMenuOpen(false)
               }}
             >
               {item.label}
-            </span>
+            </NavLink>
           ))}
         </nav>
 
-        {/* Right Actions */}
         <div className="header-right">
-          {/* Search */}
           <div className="search-container">
             {isSearchOpen ? (
               <form className="search-form" onSubmit={handleSearch}>
@@ -125,7 +116,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* Theme Toggle */}
           <button
             className="theme-toggle"
             onClick={toggleTheme}
@@ -164,7 +154,6 @@ const Header = () => {
             )}
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             className="mobile-menu-toggle"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -193,19 +182,19 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         {navItems.map((item) => (
-          <span
+          <NavLink
             key={item.path}
-            className={`mobile-nav-item ${isActive(item.path) ? 'active' : ''}`}
+            to={item.path}
+            end={item.path === '/'}
+            className={({ isActive }) => `mobile-nav-item ${isActive ? 'active' : ''}`}
             onClick={() => {
-              navigate(item.path)
               setIsMobileMenuOpen(false)
             }}
           >
             {item.label}
-          </span>
+          </NavLink>
         ))}
       </div>
     </header>

@@ -6,28 +6,28 @@ export const themes = {
   light: {
     // 背景色
     '--bg-white': '#ffffff',
-    '--bg-secondary': '#f5f5f5',
-    '--bg-tertiary': '#fafafa',
-    '--bg-hover': 'rgba(0, 0, 0, 0.04)',
-    '--bg-active': 'rgba(24, 144, 255, 0.1)',
-    '--bg-color-blue': '#1a2438',
-    '--bg-color-blue-100': '#06419a',
+    '--bg-secondary': '#fafafa',
+    '--bg-tertiary': '#f4f4f5',
+    '--bg-hover': 'rgba(9, 9, 11, 0.04)',
+    '--bg-active': 'rgba(37, 99, 235, 0.1)',
+    '--bg-color-blue': '#18181b',
+    '--bg-color-blue-100': '#27272a',
 
     // 文本颜色
-    '--text-color-black': '#000000',
-    '--text-color-primary': '#1890ff',
-    '--text-color-secondary': 'rgba(0, 0, 0, 0.65)',
-    '--text-color-tertiary': 'rgba(0, 0, 0, 0.45)',
+    '--text-color-black': '#09090b',
+    '--text-color-primary': '#2563eb',
+    '--text-color-secondary': '#3f3f46',
+    '--text-color-tertiary': '#71717a',
     '--text-color-disabled': 'rgba(0, 0, 0, 0.25)',
     '--text-color-inverse': '#ffffff',
 
     // 主色变体
-    '--color-primary': '#1890ff',
-    '--color-primary-light': '#40a9ff',
-    '--color-primary-lighter': '#69c0ff',
-    '--color-primary-dark': '#096dd9',
-    '--color-primary-hover': '#40a9ff',
-    '--color-primary-active': '#096dd9',
+    '--color-primary': '#2563eb',
+    '--color-primary-light': '#3b82f6',
+    '--color-primary-lighter': '#93c5fd',
+    '--color-primary-dark': '#1d4ed8',
+    '--color-primary-hover': '#1d4ed8',
+    '--color-primary-active': '#1e40af',
 
     // 状态颜色
     '--color-success': '#52c41a',
@@ -44,22 +44,22 @@ export const themes = {
     '--color-info-bg': '#e6f7ff',
 
     // 边框颜色
-    '--border-color': 'rgba(0, 0, 0, 0.15)',
-    '--border-color-light': 'rgba(0, 0, 0, 0.08)',
-    '--border-color-lighter': 'rgba(0, 0, 0, 0.06)',
-    '--border-color-dark': 'rgba(0, 0, 0, 0.25)',
-    '--border-color-primary': '#1890ff',
+    '--border-color': '#d4d4d8',
+    '--border-color-light': '#e4e4e7',
+    '--border-color-lighter': '#f4f4f5',
+    '--border-color-dark': '#a1a1aa',
+    '--border-color-primary': '#2563eb',
 
     // 分割线
     '--divider-color': 'rgba(0, 0, 0, 0.08)',
     '--divider-color-dark': 'rgba(0, 0, 0, 0.12)',
 
     // 阴影
-    '--shadow-sm': '0 2px 8px rgba(0, 0, 0, 0.08)',
-    '--shadow-md': '0 4px 16px rgba(0, 0, 0, 0.12)',
-    '--shadow-lg': '0 8px 24px rgba(0, 0, 0, 0.16)',
-    '--shadow-xl': '0 12px 48px rgba(0, 0, 0, 0.2)',
-    '--shadow-primary': '0 4px 16px rgba(24, 144, 255, 0.2)',
+    '--shadow-sm': '0 1px 2px rgba(15, 23, 42, 0.06)',
+    '--shadow-md': '0 10px 30px rgba(15, 23, 42, 0.07)',
+    '--shadow-lg': '0 18px 50px rgba(15, 23, 42, 0.1)',
+    '--shadow-xl': '0 24px 70px rgba(15, 23, 42, 0.14)',
+    '--shadow-primary': '0 10px 30px rgba(37, 99, 235, 0.16)',
 
     // 链接颜色
     '--link-color': '#1890ff',

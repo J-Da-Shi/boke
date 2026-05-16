@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "dev:web": "pnpm --filter boke dev:boke",
+    "dev:api": "pnpm --filter @boke/api dev",
     "dev:electron": "pnpm --filter my-electronApp dev:electronApp",
     "build": "pnpm --filter boke build",
+    "build:api": "pnpm --filter @boke/api build",
     "build:components": "pnpm --filter @lib/components build",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
+    "@esbuild/darwin-arm64": "0.27.2",
     "@eslint/js": "^9.39.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
