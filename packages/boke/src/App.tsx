@@ -6,12 +6,17 @@ import Blog from './pages/Blog'
 import Works from './pages/Works'
 import About from './pages/About'
 
-const routerBasename = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '')
+const getRouterBasename = () => {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '')
+  if (!base || base === '/') return undefined
+
+  return window.location.pathname === base || window.location.pathname.startsWith(`${base}/`) ? base : undefined
+}
 
 const App = () => {
   return (
     <ThemeProvider>
-      <Router basename={routerBasename}>
+      <Router basename={getRouterBasename()}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
