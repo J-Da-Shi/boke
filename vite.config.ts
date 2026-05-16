@@ -1,5 +1,5 @@
 export default defineConfig({
-  base: 'https://github.com/J-Da-Shi/boke',
+  base: '/',
   plugins: [react()],
   server: {
     port: 3000,
